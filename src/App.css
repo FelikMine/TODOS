@@ -1,10 +1,21 @@
-
+body {
+    --purple: #9362e0;
+}
 #App {
-    background-color: gainsboro;
+    /* background-color: gainsboro; */
+    background: -webkit-linear-gradient(225deg, rgb(229, 150, 202), rgb(116, 134, 223));
+    background: -moz-linear-gradient(225deg, rgb(229, 150, 202), rgb(116, 134, 223));
+    background: linear-gradient(225deg, rgb(229, 150, 202), rgb(116, 134, 223));
+
     height: 100vh;
 
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    
+}
+#App h1 {
+    color: white;
+    font-style: italic;
 }

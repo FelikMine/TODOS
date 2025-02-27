@@ -17,43 +17,6 @@ export default function InputBlock () {
 
     const taskRefs = useRef([]);
 
-    // function AddTask (event: SubmitEvent) {
-
-    //     event.preventDefault();
-    //     const taskValue = (event.target as HTMLFormElement).elements.namedItem('tasks__input') as HTMLInputElement;
-
-    //     console.log('Отправлено');
-    //     console.log(taskValue.value);
-    //     function addToState(event) {
-
-    //         let parentElement = event.target.closest('.tasks__check');
-
-    //         if(event.checked) {
-
-    //             setActiveTasks((tasks) =>
-    //             tasks.filter((task) => task !== parentElement));
-
-    //             setCompletedTasks( tasks => [...tasks, parentElement]);
-    //         } else {
-
-    //             setCompletedTasks((tasks) =>
-    //             tasks.filter((task) => task !== parentElement));
-
-    //             setActiveTasks(tasks => [...tasks, parentElement]);
-    //         }
-    //     }
-
-    //     let newTask = (
-    //     <div className="tasks__check" key={taskValue.value}>
-    //         <input type="checkbox" onChange={addToState} name={taskValue.value} />
-    //         <label htmlFor={taskValue.value}> {taskValue.value} </label>
-    //     </div>
-    //     )
-
-    //     setTasks(lastTasks => [...lastTasks, newTask]);
-    //     setActiveTasks(lastTasks => [...lastTasks, newTask]);
-
-    // }
     function AddTask(event : React.FormEvent<HTMLFormElement>) {
         event.preventDefault();
         const taskValue = event.target.elements.tasks__input.value;
@@ -138,16 +101,6 @@ export default function InputBlock () {
                 <div id="tasks__list">
                    {show()}
                 </div>
-                    {/* {tasks} */}
-                    {/* {tasks.map((task) => {
-                        if(!taskRefs.current.checked) {
-                            return task;
-                        } else {
-                            return;
-                        }
-                    })} */}
-
-                {/* <Tasks tasks={tasks} setTasks={setTasks}> </Tasks> */}
 
                 <div id="tasks__footer">
                     <span> {activeTasks.length} items left </span>

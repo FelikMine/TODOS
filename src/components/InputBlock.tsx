@@ -1,6 +1,5 @@
-import React, {useState, useRef} from "react";
+import React, {useState} from "react";
 import "./InputBlock.css";
-import Tasks from "./Tasks.tsx";
 
 interface Task {
     id: number;
@@ -15,13 +14,12 @@ export default function InputBlock () {
     const [completedTasks, setCompletedTasks] = useState<Task[]>([]);
     const [allTasks, setAllTasks] = useState<'all' | 'active' | 'completed'>('all');
 
-    const taskRefs = useRef([]);
-
     function AddTask(event : React.FormEvent<HTMLFormElement>) {
         event.preventDefault();
         const taskValue = event.target.elements.tasks__input.value;
 
-        if (!taskValue.trim()) return;
+        if (!taskValue.trim())
+            return;
 
         const newTask = {
             id: Date.now(), // unique
@@ -33,14 +31,13 @@ export default function InputBlock () {
         setActiveTasks((lastTasks) => [...lastTasks, newTask]);
     }
 
-    console.log(tasks.map((task) =>
-        task.id === 10 ? { ...task, completed: !task.completed } : task ));
-
-
     function toggleTaskCompletion(taskId: number) {
         const updatedTasks = tasks.map((task) =>
             task.id === taskId ? { ...task, completed: !task.completed } : task
         );
+
+        console.log(tasks.map((task) =>
+            task.id === taskId ? { ...task, completed: !task.completed } : task ));
 
         setTasks(updatedTasks);
 
@@ -86,7 +83,7 @@ export default function InputBlock () {
                     checked={task.completed}
                     onChange={() => toggleTaskCompletion(task.id)}
                 />
-                <label>{task.text}</label>
+                <label style={ !task.completed ? {textDecoration: 'none'} : {textDecoration: 'line-through'}} >{task.text}</label>
             </div>
         ));
     }

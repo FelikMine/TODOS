@@ -1,0 +1,51 @@
+
+#tasks{
+    /* height: 50vh; */
+    width: 45vw;
+    padding: 15px;
+    border: 4px solid plum;
+    border-radius: 10px;
+}
+#tasks__input {
+    width: 100%;
+    height: 30px;
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-style: italic;
+    border-radius: 10px;
+}
+#tasks__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 15px;
+    margin-top: 20px;
+}
+#tasks__footer button {
+    font-size: 15px;
+    border-radius: 5px;
+    border: none;
+    background-color: transparent;
+}
+#tasks__footer button:hover {
+    background-color: grey;
+}
+#tasks__footer button:active {
+    background-color: plum;
+}
+.tasks__check {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.tasks__check > label {
+    font-size: 20px;
+}
+.tasks__check input[type="checkbox"] {
+    width: 25px;
+    height: 25px;
+    clip-path: circle(45% at 50% 50%);
+}
+#tasks__list {
+    width: 100%;
+}
